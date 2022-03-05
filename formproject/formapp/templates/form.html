@@ -1,0 +1,377 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/first.css' %}">
+</head>
+<body>
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-6 col-lg-6">
+                <form>
+                    <div class="form-group">
+                      <h1>REGISTRATION FORM</h1>
+                      
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="user1">User Name</label>
+                            <input type="text" class="form-control" id="username" minlength="8" placeholder="User Name" onkeyup="uservalid()">
+                            <label id="user_error" for="user1"></label>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" minlength="6" placeholder="Password" onkeyup="passvalid()">
+                            <label id="password_error" for="pass"></label>
+                          </div>
+                        </div>
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" id="emailid" aria-describedby="emailHelp" placeholder="Email Id" onkeyup="emailvalid()">
+                      <label id="email_error" for="email"></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                      <input type="text" class="form-control" id="phonenumber" aria-describedby="phoneHelp" placeholder="Phone Number" onkeyup="phonevalid()">
+                      <label id="phone_error" for="phone"></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea name="address" class="address" id="address" cols="50" rows="3" placeholder="Address"></textarea>
+                        <label id="address_error" for="address"></label>
+                      </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline1">Male</label>
+                            <label id="gender_error1" for="gender"></label>
+                          </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline2">Female</label>
+                            <label id="gender_error2" for="gender"></label>
+                          </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline3">Others</label>
+                            <label id="gender_error3" for="gender"></label>
+                          </div>
+                    </div>
+                    <div class="form-group custom-control-inline">
+                        <label for="dob">Date Of Birth</label>
+                        <div class="form-group col-md-3">
+                            <label for="inputDay">Day</label>
+                            <select id="dateofbirth1" class="form-control-inline">
+                              <option selected>Choose...</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                              <option>13</option>
+                              <option>14</option>
+                              <option>15</option>
+                              <option>16</option>
+                              <option>17</option>
+                              <option>18</option>
+                              <option>19</option>
+                              <option>20</option>
+                              <option>21</option>
+                              <option>22</option>
+                              <option>23</option>
+                              <option>24</option>
+                              <option>25</option>
+                              <option>26</option>
+                              <option>27</option>
+                              <option>28</option>
+                              <option>29</option>
+                              <option>30</option>
+                              <option>31</option>
+                            </select>
+                            <label id="dob_error1" for="dob1"></label>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputMonth">Month</label>
+                            <select id="dateofbirth2" class="form-control-inline">
+                              <option selected>Choose...</option>
+                              <option>January</option>
+                              <option>February</option>
+                              <option>March</option>
+                              <option>April</option>
+                              <option>May</option>
+                              <option>June</option>
+                              <option>July</option>
+                              <option>Augest</option>
+                              <option>September</option>
+                              <option>October</option>
+                              <option>November</option>
+                              <option>December</option>
+                            </select>
+                            <label id="dob_error2" for="dob2"></label>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label for="inputYear">Year</label>
+                            <select id="dateofbirth3" class="form-control-inline">
+                              <option selected>Choose...</option>
+                              <option>1990</option>
+                              <option>1991</option>
+                              <option>1992</option>
+                              <option>1993</option>
+                              <option>1994</option>
+                              <option>1995</option>
+                              <option>1996</option>
+                              <option>1997</option>
+                              <option>1998</option>
+                              <option>1999</option>
+                              <option>2000</option>
+                              <option>2001</option>
+                            </select>
+                            <label id="dob_error3" for="dob3"></label>
+                          </div>
+                          
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Educational Qualification</label>
+                     <div class="form-check mb-2 mr-sm-2">
+                        <input class="form-check-input" type="checkbox" id="inlineFormCheck1">
+                        <label class="form-check-label" for="inlineFormCheck">SSLC</label>
+                      </div>
+                      <div class="form-check mb-2 mr-sm-2">
+                        <input class="form-check-input" type="checkbox" id="inlineFormCheck2">
+                        <label class="form-check-label" for="inlineFormCheck">PLUS TWO</label>
+                      </div>
+                      <div class="form-check mb-2 mr-sm-2">
+                        <input class="form-check-input" type="checkbox" id="inlineFormCheck3">
+                        <label class="form-check-label" for="inlineFormCheck">Degree</label>
+                      </div>
+                      <div class="form-check mb-2 mr-sm-2">
+                        <input class="form-check-input" type="checkbox" id="inlineFormCheck4">
+                        <label class="form-check-label" for="inlineFormCheck">PG</label>
+                      </div>
+                    </div>
+                    <button type="submit" onclick="validation()" class="btn btn-primary  col-md-3">Submit</button>
+                    <button type="reset" class="btn btn-danger  col-md-3">Reset</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <script>
+          function validation(){
+              user=document.getElementById('username')
+              email=document.getElementById('emailid')
+              phone=document.getElementById('phonenumber')
+              pass=document.getElementById('password')
+              address=document.getElementById('address')
+              dob1=document.getElementById('dateofbirth1')
+              dob2=document.getElementById('dateofbirth2')
+              dob3=document.getElementById('dateofbirth3')
+              edu1=document.getElementById('inlineFormCheck1')
+              edu2=document.getElementById('inlineFormCheck2')
+              edu3=document.getElementById('inlineFormCheck3')
+              edu4=document.getElementById('inlineFormCheck4')
+              gen1=document.getElementById('customRadioInline1')
+              gen2=document.getElementById('customRadioInline2')
+              gen3=document.getElementById('customRadioInline3')
+             
+             
+              
+              if(user.value==""){ 
+                  document.getElementById('username').style.borderColor="red"
+                  document.getElementById('user_error').innerHTML="Enter Your Username"
+                  document.getElementById('user_error').style.color="red"
+                  document.getElementById('user_error').style.display="block"
+                  status=1
+              }
+              else{
+                  document.getElementById('username').style.borderColor="black"
+                  document.getElementById('user_error').style.display="none"
+                  status=0
+              }
+
+              if(email.value==""){ 
+                  document.getElementById('emailid').style.borderColor="red"
+                  document.getElementById('email_error').innerHTML="Enter Your Email Id"
+                  document.getElementById('email_error').style.color="red"
+                  document.getElementById('email_error').style.display="block"
+                  status=1
+              }
+              else{
+                  document.getElementById('emailid').style.borderColor="black"
+                  document.getElementById('email_error').style.display="none"
+                  status=0
+              }
+              
+              if(phone.value==""){
+                document.getElementById('phonenumber').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="Enter Your Phone Number"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+                status=1
+              }
+
+              else{
+                document.getElementById('phonenumber').style.borderColor="red"
+                document.getElementById('phone_error').style.display="none"
+                status=0
+              }
+
+              if(pass.value==""){
+                document.getElementById('password').style.borderColor="red"
+                document.getElementById('password_error').innerHTML="Enter Your Password"
+                document.getElementById('password_error').style.color="red"
+                document.getElementById('password_error').style.display="block"
+                status=1
+              }
+
+              else{
+                document.getElementById('password').style.borderColor="red"
+                document.getElementById('password_error').style.display="none"
+                status=0
+              }
+
+              if(address.value==""){
+                document.getElementById('address').style.borderColor="red"
+                document.getElementById('address_error').innerHTML="Enter Your Address"
+                document.getElementById('address_error').style.color="red"
+                document.getElementById('address_error').style.display="block"
+                status=1
+              }
+
+              else{
+                document.getElementById('address').style.borderColor="red"
+                document.getElementById('address_error').style.display="none"
+                status=0
+              }
+
+              if(dob1.value==""){
+                document.getElementById('dateofbirth1').style.borderColor="red"
+                document.getElementById('dob_error1').innerHTML="Enter Date"
+                document.getElementById('dob_error1').style.color="red"
+                document.getElementById('dob_error1').style.display="block"
+                status=1
+              }
+
+              else{
+                document.getElementById('dateofbirth1').style.borderColor="red"
+                document.getElementById('dob_error1').style.display="none"
+                status=0
+              }
+
+              if(dob2.value==""){
+                document.getElementById('dateofbirth2').style.borderColor="red"
+                document.getElementById('dob_error2').innerHTML="Enter Month"
+                document.getElementById('dob_error2').style.color="red"
+                document.getElementById('dob_error2').style.display="block"
+                status=1
+              }
+
+              else{
+                document.getElementById('dateofbirth2').style.borderColor="red"
+                document.getElementById('dob_error2').style.display="none"
+                status=0
+              }
+
+              if(dob3.value==""){
+                document.getElementById('dateofbirth3').style.borderColor="red"
+                document.getElementById('dob_error3').innerHTML="Enter Year"
+                document.getElementById('dob_error3').style.color="red"
+                document.getElementById('dob_error3').style.display="block"
+                status=1
+              }
+
+              else{
+                document.getElementById('dateofbirth3').style.borderColor="red"
+                document.getElementById('dob_error3').style.display="none"
+                status=0
+              }
+
+              if(status==0){
+                  return false;
+              }
+              else if(status==1){
+                  return true;
+              }
+          }
+
+          function uservalid(){
+             user=document.getElementById('username').value
+            if (user.length<8)
+              {
+                document.getElementById('user_error').innerHTML="** Username Must Be 8 Characters"
+                document.getElementById('user_error').style.color="red"
+                
+              }
+            else if(user.length<=8){
+              document.getElementById('user_error').innerHTML="** You Are Enter A Perfect Username"
+              document.getElementById('user_error').style.color="green"
+            }
+
+            if(user.length>10){
+              document.getElementById('user_error').innerHTML="**Username Must Be 8 Characters"
+              document.getElementById('user_error').style.color="red"
+            }
+              
+          }
+       
+          function passvalid(){
+            var pass=document.getElementById('password').value
+
+            if(pass.length<=6){
+              document.getElementById('password_error').innerHTML="** Password Must Be 6 Characters"
+              document.getElementById('password_error').style.color="red"
+            }
+
+            if(pass=="@"){
+              document.getElementById('password_error').innerHTML="** Your Password Is A Strong Password" 
+              document.getElementById('password_error').style.color="green" 
+            }
+
+            if(pass.length>10){
+              document.getElementById('password_error').innerHTML="** Password Must Be 6 Characters"
+              document.getElementById('password_error').style.color="red"
+            }
+
+          }
+            
+          function emailvalid(){
+            email=document.getElementById('emailid').value
+
+            if(email.length<=5){
+              document.getElementById('email_error').innerHTML="** Email Must Have @gmail.com"
+              document.getElementById('email_error').style.color="red"
+              
+            }
+          }
+
+          function phonevalid(){
+            phone=document.getElementById('phonenumber').value
+
+            if(phone.length<5){
+              document.getElementById('phone_error').innerHTML="Phone Number Must Be 10 Digits"
+              document.getElementById('phone_error').style.color="red"
+            }
+
+            if(phone.length>=11){
+              document.getElementById('phone_error').innerHTML="Phone Number Must Be 10 Digits"
+              document.getElementById('phone_error').style.color="red"
+            }
+          }
+
+
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>
