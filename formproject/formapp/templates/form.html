@@ -338,7 +338,7 @@
               document.getElementById('password_error').style.color="green" 
             }
 
-            if(pass=="ja51drj2"){
+            if(pass=="Aa25Drj@2"){
               document.getElementById('password_error').innerHTML="** Your Password Is A Strong Password" 
               document.getElementById('password_error').style.color="green" 
             }
@@ -358,6 +358,11 @@
               document.getElementById('email_error').innerHTML="** Email Must Have @gmail.com"
               document.getElementById('email_error').style.color="red"
               
+            }
+
+            if(email.value=Number){
+              document.getElementById('email_error').innerHTML="** Please Enter A Valid Email Id"
+              document.getElementById('email_error').style.color="red"
             }
           }
 
