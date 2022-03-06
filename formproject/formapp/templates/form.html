@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <textarea name="address" class="address" id="address" cols="50" rows="3" placeholder="Address"></textarea>
+                        <textarea name="address" class="address" id="address" cols="30" rows="3" placeholder="Address"></textarea>
                         <label id="address_error" for="address"></label>
                       </div>
 
@@ -64,9 +64,9 @@
                     </div>
                     <div class="form-group custom-control-inline">
                         <label for="dob">Date Of Birth</label>
-                        <div class="form-group col-md-3">
+                        <div class="form-group">
                             <label for="inputDay">Day</label>
-                            <select id="dateofbirth1" class="form-control-inline">
+                            <select id="dateofbirth1" class="form-control-inline col-md-3">
                               <option selected>Choose...</option>
                               <option>1</option>
                               <option>2</option>
@@ -102,9 +102,9 @@
                             </select>
                             <label id="dob_error1" for="dob1"></label>
                           </div>
-                          <div class="form-group col-md-4">
+                          <div class="form-group">
                             <label for="inputMonth">Month</label>
-                            <select id="dateofbirth2" class="form-control-inline">
+                            <select id="dateofbirth2" class="form-control-inline col-md-3">
                               <option selected>Choose...</option>
                               <option>January</option>
                               <option>February</option>
@@ -121,9 +121,9 @@
                             </select>
                             <label id="dob_error2" for="dob2"></label>
                           </div>
-                          <div class="form-group col-md-3">
+                          <div class="form-group">
                             <label for="inputYear">Year</label>
-                            <select id="dateofbirth3" class="form-control-inline">
+                            <select id="dateofbirth3" class="form-control-inline col-md-3">
                               <option selected>Choose...</option>
                               <option>1990</option>
                               <option>1991</option>
@@ -161,7 +161,7 @@
                         <label class="form-check-label" for="inlineFormCheck">PG</label>
                       </div>
                     </div>
-                    <button type="submit" onclick="validation()" class="btn btn-primary  col-md-3">Submit</button>
+                    <button type="submit" onclick="return validation()" class="btn btn-primary  col-md-3">Submit</button>
                     <button type="reset" class="btn btn-danger  col-md-3">Reset</button>
                   </form>
               </div>
@@ -333,10 +333,16 @@
               document.getElementById('password_error').style.color="red"
             }
 
-            if(pass=="@"){
+            if(pass=="@#$%&*"){
               document.getElementById('password_error').innerHTML="** Your Password Is A Strong Password" 
               document.getElementById('password_error').style.color="green" 
             }
+
+            if(pass=="ja51drj2"){
+              document.getElementById('password_error').innerHTML="** Your Password Is A Strong Password" 
+              document.getElementById('password_error').style.color="green" 
+            }
+
 
             if(pass.length>10){
               document.getElementById('password_error').innerHTML="** Password Must Be 6 Characters"
